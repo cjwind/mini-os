@@ -11,8 +11,8 @@ disk_load:
     jc disk_error
 
     pop dx              ; restore dx from the stack
-    ;cmp dh, al          ; if al (sectors read) != dh (sectors expected)
-    ;jne disk_error      ;   display error message
+    cmp dh, al          ; if al (sectors read) != dh (sectors expected)
+    jne disk_error      ;   display error message
     ret
 
 disk_error:
